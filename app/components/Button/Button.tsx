@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import "./button.css"
 import GradientText from '../GradientText/GradientText'
 const Button = ({text}: {text:string}) => {

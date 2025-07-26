@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 const GradientText = ({ text, fontSize }: { text: string, fontSize?: number }) => {
     return (

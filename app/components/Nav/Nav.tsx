@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 import "./nav.css";
 
@@ -12,11 +12,11 @@ const navItems = [
 
 const Nav = () => {
   const [indicatorStyle, setIndicatorStyle] = useState({});
-  const containerRef = useRef(null);
-  const [isMouseThere, setIsMouseThere ] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isMouseThere, setIsMouseThere] = useState<boolean>(false);
 
-  const handleMouseEnter = (e:any) => {
-    const li = e.target;
+  const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
+    const li = e.currentTarget;
     const container = containerRef.current || document.body;
     const rect = li.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
@@ -24,7 +24,7 @@ const Nav = () => {
     const width = rect.width - 12;
     const height = rect.height - 12;
     const left = rect.left - containerRect.left;
-    const top = rect.top - containerRect.top ;
+    const top = rect.top - containerRect.top;
 
     setIndicatorStyle({
       width: `${width}px`,
@@ -34,14 +34,25 @@ const Nav = () => {
   };
 
   return (
-    <div className="relative inline-block " ref={containerRef}>
-      <ul onMouseEnter={()=> setIsMouseThere(true)} onMouseLeave={()=> setIsMouseThere(false)} className="flex justify-center items-center border border-[#353535] p-2 rounded-[15px] overflow-hidden bg-[#0F0F0FCC] relative">
+    <div className="relative inline-block" ref={containerRef}>
+      <ul
+        onMouseEnter={() => setIsMouseThere(true)}
+        onMouseLeave={() => setIsMouseThere(false)}
+        className="flex justify-center items-center border border-[#353535] p-2 rounded-[15px] overflow-hidden bg-[#0F0F0FCC] relative"
+      >
         {navItems.map((item, idx) => (
-          <li key={idx} onMouseEnter={handleMouseEnter} className={`relative z-10 cursor-pointer !px-[22px] !py-[10px] text-[16px] lowercase text-[#777777] hover:text-[#6BB0FF] duration-1000 bg-[#0F0F0FCC] font-medium`} >
+          <li
+            key={idx}
+            onMouseEnter={handleMouseEnter}
+            className="relative z-10 cursor-pointer !px-[22px] !py-[10px] text-[16px] lowercase text-[#777777] hover:text-[#6BB0FF] duration-1000 bg-[#0F0F0FCC] font-medium"
+          >
             {item.title}
           </li>
         ))}
-        <span className={`nav-indicator ${isMouseThere ? "opacity-100 duration-300" : "opacity-0"}`} style={indicatorStyle}></span>
+        <span
+          className={`nav-indicator ${isMouseThere ? "opacity-100 duration-300" : "opacity-0"}`}
+          style={indicatorStyle}
+        ></span>
       </ul>
     </div>
   );
