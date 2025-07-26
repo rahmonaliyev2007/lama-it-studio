@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background:  #000000;
+  color: #CEC9C9;
+  font-family: "Involve", sans-serif ;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve-Bold.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve-Medium.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve-Oblique.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("../public/assets/fonts/Involve/Involve-SemiBold.ttf") format("ttf");
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.containers{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

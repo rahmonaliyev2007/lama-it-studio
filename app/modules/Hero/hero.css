@@ -1,0 +1,233 @@
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh + 100px);
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    height: calc(100% - 130px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* === Glowing Dots === */
+/* === Glowing Dots === */
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(90px);
+    background: radial-gradient(circle, #6db1ff 70%, transparent 0%);
+    width: 450px;
+    height: 450px;
+    transform: translate(-50%, -50%);
+    scale: 1;
+    opacity: 0.7;
+}
+
+.dot1 {
+    top: 20%;
+    left: 50%;
+    z-index: 1;
+    animation: float1 40s infinite ease-in-out;
+}
+
+.dot2 {
+    top: 50%;
+    left: 20%;
+    animation: float2 40s infinite ease-in-out;
+    z-index: 2;
+}
+
+.dot3 {
+    top: 80%;
+    left: 50%;
+    animation: float3 40s infinite ease-in-out;
+    z-index: 3;
+}
+
+.dot4 {
+    top: 50%;
+    left: 80%;
+    animation: float4 40s infinite ease-in-out;
+    z-index: 4;
+}
+
+@keyframes float1 {
+    0% {
+        top: 20%;
+        left: 50%;
+    }
+
+    12.5% {
+        top: 30%;
+        left: 40%;
+    }
+
+    25% {
+        top: 25%;
+        left: 70%;
+    }
+
+    37.5% {
+        top: 23%;
+        left: 78%;
+    }
+
+    50% {
+        top: 47%;
+        left: 90%;
+    }
+
+    62.5% {
+        top: 40%;
+        left: 70%;
+    }
+
+    75% {
+        top: 50%;
+        left: 70%;
+    }
+
+    100% {
+        top: 20%;
+        left: 50%;
+    }
+
+}
+
+@keyframes float2 {
+    0% {
+        top: 50%;
+        left: 20%;
+    }
+
+    12.5% {
+        top: 50%;
+        left: 10%;
+    }
+
+    25% {
+        top: 45%;
+        left: 0%;
+    }
+
+    37.5% {
+        top: 40%;
+        left: -10%;
+    }
+
+    50% {
+        top: 40%;
+        left: -30%;
+    }
+
+    62.5% {
+        top: 35%;
+        left: 15%;
+    }
+
+    75% {
+        top: 25%;
+        left: 45%;
+    }
+
+    100% {
+        top: 50%;
+        left: 20%;
+    }
+}
+
+@keyframes float3 {
+    0% {
+        top: 80%;
+        left: 50%;
+    }
+
+    12.5% {
+        top: 75%;
+        left: 38%;
+    }
+
+    25% {
+        top: 75%;
+        left: 55%;
+    }
+
+    37.5% {
+        top: 80%;
+        left: 65%;
+    }
+
+    50% {
+        top: 65%;
+        left: 55%;
+    }
+
+    62.5% {
+        top: 75%;
+        left: 45%;
+    }
+
+    75% {
+        top: 60%;
+        left: 25%;
+    }
+
+    100% {
+        top: 80%;
+        left: 50%;
+    }
+}
+
+@keyframes float4 {
+    0% {
+        top: 50%;
+        left: 80%;
+    }
+
+    12.5% {
+        top: 70%;
+        left: 70%;
+    }
+
+    25% {
+        top: 60%;
+        left: 80%;
+    }
+
+    37.5% {
+        top: 45%;
+        left: 55%;
+    }
+
+    50% {
+        top: 80%;
+        left: 75%;
+    }
+
+    62.5% {
+        top: 85%;
+        left: 70%;
+    }
+
+    75% {
+        top: 90%;
+        left: 45%;
+    }
+
+    100% {
+        top: 50%;
+        left: 80%;
+    }
+}

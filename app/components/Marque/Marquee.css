@@ -1,0 +1,20 @@
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 80px;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-size: 32px;
+  font-weight: 700;
+  color: #747474;
+ 
+}
