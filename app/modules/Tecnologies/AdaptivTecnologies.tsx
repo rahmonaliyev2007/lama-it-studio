@@ -12,10 +12,14 @@ const AdaptivTecnologies = () => {
         <p className='font-semibold text-[15px] text-[#969696] !mt-[14px]'>Мы строим с использованием новейших технологий, чтобы вы были впереди</p>
       </div>
       <div className='flex items-center gap-[40px] min-w-[120%] translate-x-[3%] duration-1000 group-hover:translate-x-[-15%] bottom-1/3 absolute'>
-        {items?.map((item, i) => { return (<Icon i={i}>{item}</Icon>) })}
+        {items?.map((item, i) => { return (<div key={i} className='shadow-[0_0_10px_0_#00000099,inset_0_0_10px_0_#FFFFFF0D] bg-[#191919CC] w-[70px] h-[70px] rounded-[50%] flex justify-center items-center'>
+      {item}
+    </div>) })}
       </div>
        <div className='flex items-center gap-[40px] min-w-[120%] translate-x-[-15%] duration-1000 group-hover:translate-x-[3%] bottom-10 absolute'>
-        {items2?.map((item, inx) => { return (<Icon i={inx + 5}>{item}</Icon>) })}
+        {items2?.map((item, inx) => { return (<div key={inx} className='shadow-[0_0_10px_0_#00000099,inset_0_0_10px_0_#FFFFFF0D] bg-[#191919CC] w-[70px] h-[70px] rounded-[50%] flex justify-center items-center'>
+      {item}
+    </div>) })}
       </div>
     </div>
   )
@@ -23,10 +27,3 @@ const AdaptivTecnologies = () => {
 
 export default AdaptivTecnologies
 
-const Icon = ({ children, i }: { children: ReactNode, i: number }) => {
-  return (
-    <div key={i} className='shadow-[0_0_10px_0_#00000099,inset_0_0_10px_0_#FFFFFF0D] bg-[#191919CC] w-[70px] h-[70px] rounded-[50%] flex justify-center items-center'>
-      {children}
-    </div>
-  )
-}
