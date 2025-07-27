@@ -1,4 +1,5 @@
-import { BoxBackgroud, BoxIcon } from '@/public/assets/icons/icons'
+import { BoxIcon } from '@/public/assets/icons/boxIcon'
+import { BoxBackgroud} from '@/public/assets/icons/icons'
 import React from 'react'
 
 const UnicalDesign = () => {

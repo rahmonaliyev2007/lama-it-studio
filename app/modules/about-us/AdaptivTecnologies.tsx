@@ -1,6 +1,7 @@
 "use client";
-import { ChatGPTIcon, CIcon, CPlusPlusIcon, FigmaIcon, FramerIcon, JSIcon, PhytonIcon, ReactIcon, TailwindIcon,
+import { ChatGPTIcon, CIcon, CPlusPlusIcon, FigmaIcon, FramerIcon, JSIcon, PhytonIcon, TailwindIcon,
 } from "@/public/assets/icons/icons";
+import { ReactIcon } from "@/public/assets/icons/ReactIcon";
 import React from "react";
 
 const AdaptivTecnologies = () => {

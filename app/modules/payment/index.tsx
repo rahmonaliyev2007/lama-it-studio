@@ -1,9 +1,11 @@
 "use client";
 
 import Heading from "@/app/components/Heading/Heading";
-import { AIIcon, BranchIcon, ChipIcon, DotsIcon, GlobeIcon, LamaIconCircle, PCIcon, PhoneIcon, UIUXIcon, } from "@/public/assets/icons/icons";
+import { AIIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon, } from "@/public/assets/icons/icons";
 import React, { useEffect, useState } from "react";
 import './rotation.css'
+import { DotsIcon } from "@/public/assets/icons/DotsIcon";
+import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
 const items = [
   { title: 'Веб-разработка', icon: <GlobeIcon />, description: "Мы проектируем продуманные и стильные интерфейсы, где эстетика сочетается с функциональностью.", },
   { title: 'Разработка мобильных приложений', icon: <PhoneIcon />, description: "Создаем мощные и адаптивные веб-приложения под любые устройства и экраны.", },

@@ -1,4 +1,5 @@
-import { LamaIconCircle, PersonIcon } from '@/public/assets/icons/icons'
+import { PersonIcon } from '@/public/assets/icons/icons'
+import { LamaIconCircle } from '@/public/assets/icons/LamaIcon'
 import React from 'react'
 
 const ProDesign = () => {

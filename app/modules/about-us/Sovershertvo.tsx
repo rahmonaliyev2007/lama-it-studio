@@ -1,4 +1,5 @@
-import { InfiniteIcon, InfinityButtonIcon } from '@/public/assets/icons/icons'
+import { InfiniteIcon } from '@/public/assets/icons/icons'
+import { InfinityButtonIcon } from '@/public/assets/icons/InfinityIcon'
 import React from 'react'
 
 const Sovershertvo = () => {
