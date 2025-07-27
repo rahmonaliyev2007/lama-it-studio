@@ -1,10 +1,12 @@
+import dynamic from "next/dynamic";
 import Hero from "./modules/Hero";
-import RotatingInfoCircle from "./modules/payment";
 import TecnologiesModule from "./modules/about-us";
-import Projects from "./modules/Projects/Projects";
-import Contact from "./modules/Contact/Contact";
-import Questions from "./modules/Questions/Questions";
 
+
+const RotatingInfoCircle = dynamic(() => import("./modules/payment"));
+const Projects = dynamic(() => import("./modules/Projects/Projects"));
+const Questions = dynamic(() => import("./modules/Questions/Questions"));
+const Contact = dynamic(() => import("./modules/Contact/Contact"));
 export default function Home() {
   return (
     <div>
@@ -15,6 +17,6 @@ export default function Home() {
       <Questions/>
       <Contact/>
     </div>
-    
+
   );
 }
