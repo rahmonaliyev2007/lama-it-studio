@@ -6,7 +6,7 @@ import ProDesign from './ProDesign';
 import AdaptivTecnologies from './AdaptivTecnologies';
 import Effective from './Effective';
 import Sovershertvo from './Sovershertvo';
-
+import Heading from '@/app/components/Heading/Heading';
 const TecnologiesModule = () => {
 
   return (
@@ -18,8 +18,11 @@ const TecnologiesModule = () => {
         </div>
         <Marquee />
       </div>
+
+      <Heading title={<>Технологии с <br /> человеческим подходом</>} text='О нас' paragraph='Мы — молодая команда, которая живёт на стыке технологий и эстетики. Мы не просто следим за новейшими трендами — мы их создаём. Наши решения объединяют высокие технологии, безупречный стиль дизайна и взгляд, устремлённый далеко в будущее.'/>
+
       <div className="containers h-screen">
-        <div className='flex justify-between items-center gap-[15px] !mt-[200px]'>
+        <div className='flex justify-between items-center gap-[15px] !mt-[85px]'>
         <ProDesign />
         <AdaptivTecnologies />
         <Effective />

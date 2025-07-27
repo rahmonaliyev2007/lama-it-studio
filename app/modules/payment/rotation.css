@@ -1,0 +1,24 @@
+
+
+.lama-shadow {
+  animation: shadow 4s linear infinite;
+}
+
+.lama-icon{
+  animation: dropShadow 4s linear infinite;
+}
+
+
+@keyframes shadow {
+  0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+}
+
+@keyframes dropShadow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0px #6BB0FF);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #6BB0FF);
+  }
+}
