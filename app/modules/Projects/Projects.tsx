@@ -20,7 +20,7 @@ const Projects = () => {
 
       <div className='flex justify-between items-center gap-[33px] bg'>
         {projectsData.slice(0,2).map(({ image, alt, bg, title, desc}, i) => (
-          <div key={i} className="w-[50%] flex relative overflow-hidden justify-center items-center !px-[65px] group !pt-[60px] !pb-[30px] rounded-[30px] border border-[#707070] shadow-[inset_0_0_5px_30px_black]" style={{ background: bg }}>
+          <div key={i} className="w-[50%] flex relative overflow-hidden justify-center items-center !px-[65px] group !pt-[60px] !pb-[30px] rounded-[30px] border border-[#707070] shadow-[inset_0_0_50px_30px_black] hover:shadow-[inset_0_0_20px_5px_black] duration-500" style={{ background: bg }}>
             <Image width={570} height={540} alt={alt} src={image} className={`group-hover:scale-[1.1] duration-1000 drop-shadow-[0_0_25px_black]`}/>
             <div className='absolute bottom-0 group-hover:h-[35%] duration-1000 left-0 h-[50%] w-full rounded-b-[30px] z-[20] bg-gradient-to-b from-transparent via-[#000000b3] to-black'/>
             <div className='absolute bottom-0 left-0 w-full z-[22] !px-[55px] h-[25%]'><div><h2 className='font-semibold text-2xl'>{title}</h2></div><p className='font-medium text-[15px] text-[#969696] leading-[100%] max-w-[490px] !mt-[10px]'>{desc}</p></div>
@@ -29,7 +29,7 @@ const Projects = () => {
       </div>
       <div className='flex justify-between items-center gap-[33px] !mt-[33px]'>
         {projectsData.slice(2).map(({ image, alt, bg, title, desc}, i) => (
-          <div key={i} className="w-[50%] flex relative overflow-hidden justify-center items-center !px-[65px] group !pt-[60px] !pb-[30px] rounded-[30px] border border-[#707070]" style={{ background: bg }}>
+          <div key={i} className="w-[50%] flex relative overflow-hidden justify-center items-center !px-[65px] group !pt-[60px] !pb-[30px] rounded-[30px] border border-[#707070]  shadow-[inset_0_0_50px_30px_black] hover:shadow-[inset_0_0_20px_5px_black] duration-500" style={{ background: bg }}>
             <Image width={570} height={540} alt={alt} src={image} className={`group-hover:scale-[1.1] duration-1000 drop-shadow-[0_0_25px_black]`}/>
             <div className='absolute bottom-0 group-hover:h-[35%] duration-1000 left-0 h-[50%] w-full rounded-b-[30px] z-[20] bg-gradient-to-b from-transparent via-[#000000b3] to-black'/>
             <div className='absolute bottom-0 left-0 w-full z-[22] !px-[55px] h-[25%]'><div><h2 className='font-semibold text-2xl'>{title}</h2></div><p className='font-medium text-[15px] text-[#969696] leading-[100%] max-w-[490px] !mt-[10px]'>{desc}</p></div>
