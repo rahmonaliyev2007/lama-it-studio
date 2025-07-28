@@ -382,3 +382,11 @@ export const WhitePlusIcon = () => {
 
     )
 }
+export const BluePlusIcon = () => {
+    return (
+        <svg width="40" height="40" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.91675 13H13.0001M13.0001 13H24.0834M13.0001 13V1.91669M13.0001 13V24.0834" stroke="#6BB0FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
+    )
+}
