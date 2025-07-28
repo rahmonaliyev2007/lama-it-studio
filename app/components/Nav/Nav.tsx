@@ -3,11 +3,11 @@ import React, { useRef, useState } from "react";
 import "./nav.css";
 
 const navItems = [
-  { title: "О нас", link: "" },
-  { title: "Услуги", link: "" },
-  { title: "Проекты", link: "" },
-  { title: "Вопросы", link: "" },
-  { title: "Контакты", link: "" },
+  { title: "О нас", link: "#about" },
+  { title: "Услуги", link: "#payments" },
+  { title: "Проекты", link: "#projects" },
+  { title: "Вопросы", link: "#questions" },
+  { title: "Контакты", link: "#contact" },
 ];
 
 const Nav = () => {
@@ -44,13 +44,20 @@ const Nav = () => {
           <li
             key={idx}
             onMouseEnter={handleMouseEnter}
-            className="relative z-10 cursor-pointer !px-[22px] !py-[10px] text-[16px] lowercase text-[#777777] hover:text-[#6BB0FF] duration-1000 bg-[#0F0F0FCC] font-medium"
+            className="relative z-10 !px-[22px] !py-[10px] lowercase font-medium bg-[#0F0F0FCC]"
           >
-            {item.title}
+            <a
+              href={item.link}
+              className="text-[16px] text-[#777777] hover:text-[#6BB0FF] duration-1000 cursor-pointer block"
+            >
+              {item.title}
+            </a>
           </li>
         ))}
         <span
-          className={`nav-indicator ${isMouseThere ? "opacity-100 duration-300" : "opacity-0"}`}
+          className={`nav-indicator ${
+            isMouseThere ? "opacity-100 duration-300" : "opacity-0"
+          }`}
           style={indicatorStyle}
         ></span>
       </ul>

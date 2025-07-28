@@ -3,7 +3,7 @@ import React from 'react'
 
 const Questions = () => {
     return (
-        <div className='containers flex justify-between items-start !mt-[200px]'>
+        <div className='containers flex justify-between items-start !mt-[200px]' id='questions'>
             <div>
                 <div className='flex justify-start'>
                     <div className={`h-[45px] !px-[22px] border border-[#707070] rounded-[50px] font-semibold text-[16px] flex justify-center gap-2 items-center`}>

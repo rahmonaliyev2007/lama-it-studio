@@ -25,7 +25,7 @@ const Contact = () => {
   }
 
   return (
-    <footer className='containers'>
+    <footer className='containers' id='contact'>
       <Heading text='Контакты' title={<>Свяжитесь с нами</>} paragraph='Есть вопросы или нужна помощь? Наша команда здесь, чтобы помочь. Свяжитесь с нами для демонстраций, поддержки или любых вопросов, которые у вас могут возникнуть.' />
 
       <div className='flex justify-between gap-4 items-start'>

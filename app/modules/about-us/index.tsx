@@ -10,7 +10,7 @@ import Heading from '@/app/components/Heading/Heading';
 const TecnologiesModule = () => {
 
   return (
-    <div>
+    <div id='about'>
       <div>
         <div className="relative z-[20]">
           <div className="absolute bottom-full left-0 w-full h-[80px] bg-gradient-to-t from-black to-transparent pointer-events-none" />

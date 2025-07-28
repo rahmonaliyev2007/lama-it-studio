@@ -41,7 +41,7 @@ const RotatingInfoCircle = () => {
   }, [activeIndex]);
 
   return (
-    <section className="containers">
+    <section className="containers" id="payments"> 
       <Heading text="Услуги" title={<>Что мы умеем — <br /> технологично, точно, красиво</>} paragraph="От сайта до сложной цифровой экосистемы — мы разрабатываем продукты, которые решают реальные задачи. В каждом проекте — баланс технологий, дизайна и здравого смысла. Мы не просто делаем «как надо», мы делаем как лучше." />
       <div className="w-full h-screen flex items-center justify-start bg-black text-white relative overflow-hidden">
         {/* Central circle */}
