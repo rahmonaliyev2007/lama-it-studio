@@ -1,4 +1,3 @@
-
 import Marquee from '@/app/components/Marque/Marque';
 import React from 'react'
 import UnicalDesign from './UnicalDesign';
@@ -7,6 +6,7 @@ import AdaptivTecnologies from './AdaptivTecnologies';
 import Effective from './Effective';
 import Sovershertvo from './Sovershertvo';
 import Heading from '@/app/components/Heading/Heading';
+
 const TecnologiesModule = () => {
 
   return (
