@@ -89,8 +89,8 @@ const RotatingInfoCircle = () => {
             }
 
             return (
-              <div key={index} className={`absolute flex items-center justify-start bg-white text-black rounded-[30px] p-2 transition-all duration-1000 ease-in-out overflow-hidden ${isActive && shouldShowDescription ? "w-[600px] h-auto z-10" : "w-[80px] h-[80px] z-0"}`}
-                style={{ transform: isActive && shouldShowDescription ? `rotate(${rotateBase}deg) translate(0, -565px) rotate(-${rotation + rotateBase}deg)` : commonTransform, }}>
+              <div key={index} className={`absolute flex items-center justify-start bg-white text-black rounded-[30px] p-2 transition-all duration-[0.95s] ease-in-out overflow-hidden ${isActive && shouldShowDescription ? "w-[600px] h-auto z-10" : "w-[80px] h-[80px] z-0"}`}
+                style={{ transform: isActive && shouldShowDescription ? `rotate(${rotateBase}deg) translate(0, -560px) rotate(-${rotation + rotateBase}deg)` : commonTransform, }}>
                
                 <div className="w-[80px] h-[80px] flex items-center !px-[20px]">
                   {item.icon}
