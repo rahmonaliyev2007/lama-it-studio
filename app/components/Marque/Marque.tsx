@@ -1,11 +1,23 @@
 "use client"
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Marquee.css";
 
-const items: string[] = ["FEEDUP", "PEPSI", "MAKRO", "ZARA", "KORZINKA", "EVOS", "ORMAN"];
+const items: string[] = ["MINISTRY OF ECOLOGY", "AQUA EVOLUTION", "FINTECH", "COMFORT ENGINEERING GROUP"];
 
 const Marquee: React.FC = () => {
   const marqueeRef = useRef<HTMLDivElement>(null);
+  const [repeatedItems, setRepeatedItems] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!marqueeRef.current) return;
+
+    const itemWidth = 200;
+    const minItems = Math.ceil((window.innerWidth * 2) / itemWidth);
+
+    const repeats = Math.ceil(minItems / items.length);
+    const newItems = Array(repeats).fill(items).flat();
+    setRepeatedItems(newItems);
+  }, []);
 
   useEffect(() => {
     const marquee = marqueeRef.current;
@@ -26,14 +38,13 @@ const Marquee: React.FC = () => {
     };
 
     animate();
-
     return () => cancelAnimationFrame(animationId);
-  }, []);
+  }, [repeatedItems]);
 
   return (
     <div className="marquee-container">
       <div className="marquee-track" ref={marqueeRef}>
-        {[...items, ...items].map((text, idx) => (
+        {repeatedItems.map((text, idx) => (
           <span className="marquee-item" key={idx}>
             {text}
           </span>

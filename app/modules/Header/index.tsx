@@ -10,9 +10,9 @@ const Header = () => {
             <div className={`containers flex justify-between items-center gap-2`}>
                 <Logo />
                 <Nav />
-                <Button text={'Связаться с нами'} />
+                <div className='max-[900px]:hidden'><Button text={'Связаться с нами'} /></div>
             </div>
-            <Cursor/>
+            {/* <Cursor/> */}
         </div>
     )
 }

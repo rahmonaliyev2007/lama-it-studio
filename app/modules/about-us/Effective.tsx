@@ -3,7 +3,7 @@ import React from 'react'
 
 const Effective = () => {
   return (
-    <div className='w-full relative h-[400px] border-[#4E4C4C] border-[1px] rounded-[30px] p-[20px] shadow-[0_0_5.6px_0_#FFFFFF_15%] overflow-hidden group  '>
+    <div className='w-full relative aspect-square max-h-[400px] border-[#4E4C4C] border-[1px] rounded-[30px] p-[20px] shadow-[0_0_5.6px_0_#FFFFFF_15%] overflow-hidden group  '>
       <div className=' !p-10 !pb-0'>
         <h3 className='font-semibold text-2xl text-white'>Быстрое и эффективное исполнение</h3>
         <p className='font-semibold text-[15px] text-[#969696] !mt-[14px] !pr-[30px]'>Мы поставляем высококачественную продукцию - без экономии на ценах</p>

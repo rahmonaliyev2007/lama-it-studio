@@ -18,3 +18,19 @@
   color: #747474;
  
 }
+
+@media screen and (max-width:900px) {
+  .marquee-container{
+    padding: 20px 0 0 0;
+  }
+  .marquee-item{
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width:768px) {
+
+  .marquee-item{
+    font-size: 20px;
+  }
+}
