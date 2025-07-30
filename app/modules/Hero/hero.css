@@ -36,29 +36,39 @@
 .dot1 {
     top: 20%;
     left: 50%;
-    z-index: 1;
-    animation: 40s ease-in-out infinite float1
 }
 
 .dot2 {
     top: 50%;
     left: 20%;
-    animation: 40s ease-in-out infinite float2;
-    z-index: 2
 }
 
 .dot3 {
     top: 80%;
     left: 50%;
-    animation: 40s ease-in-out infinite float3;
-    z-index: 3
 }
 
 .dot4 {
     top: 50%;
     left: 80%;
-    animation: 40s ease-in-out infinite float4;
-    z-index: 4
+}
+
+@media screen and (min-width:768px) {
+    .dot1 {
+        animation: 40s ease-in-out infinite float1
+    }
+
+    .dot2 {
+        animation: 40s ease-in-out infinite float2;
+    }
+
+    .dot3 {
+        animation: 40s ease-in-out infinite float3;
+    }
+
+    .dot4 {
+        animation: 40s ease-in-out infinite float4;
+    }
 }
 
 @keyframes float1 {

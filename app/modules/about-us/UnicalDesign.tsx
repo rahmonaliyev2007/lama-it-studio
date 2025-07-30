@@ -21,7 +21,7 @@ const UnicalDesign = () => {
             <div className='flex gap-[6px] min-w-[115%] absolute top-[-25px] -translate-[5px]'><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/></div>
             <div className='flex gap-[6px] min-w-[115%] absolute top-[205px] -translate-[5px]'><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/></div>
             <div className='flex gap-[6px] min-w-[140%] absolute top-[315px] -translate-x-[70px]'><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/> <BoxBackgroud/></div>
-            <div className='flex gap-[6px] min-w-[140%] absolute top-[85px] -translate-x-[70px]'><BoxBackgroud/><div className='max-[950px]:hidden'><BoxBackgroud/></div><BoxBackgroud/><div className=' relative'><div className=''><BoxBackgroud/></div> <div className={`absolute top-[-3%] left-[0.5%] ${animate ? '!opacity-100 !drop-shadow-[0_0_70px_#6bb0ff]' : 'group-hover:opacity-100 group-hover:drop-shadow-[0_0_70px_#6bb0ff]'} opacity-0 duration-1000`}><BoxIcon/></div></div><BoxBackgroud/><BoxBackgroud/> <BoxBackgroud/></div>
+            <div className='flex gap-[6px] min-w-[140%] absolute top-[85px] -translate-x-[70px]'><BoxBackgroud/><div className='max-[950px]:hidden'><BoxBackgroud/></div><BoxBackgroud/><div className='relative'><BoxBackgroud/><div className={`absolute top-[-3%] left-[0.5%] ${animate ? '!opacity-100' : 'group-hover:opacity-100 group-hover:drop-shadow-[0_0_70px_#6bb0ff]'} opacity-0 duration-1000`}><BoxIcon/></div></div><BoxBackgroud/><BoxBackgroud/> <BoxBackgroud/></div>
           </div>
         </div>
   )
