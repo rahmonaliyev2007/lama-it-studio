@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
 import "./nav.css";
-import { div } from "motion/react-client";
 
 const navItems = [
   { title: "О нас", link: "#about" },

@@ -5,7 +5,7 @@ import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
 import { items } from "./paymentData";
 import dotsBg from '@/public/assets/images/dots.svg'
 import Image from "next/image";
-import { BREAKPOINTS } from "./paymentConfigs";
+import { BREAKPOINTS, DeviceConfig } from "./paymentConfigs";
 
 // Breakpoint configurations
 
@@ -46,7 +46,7 @@ const Payment = () => {
         return () => cancelAnimationFrame(animationFrameId);
     }, [activeIndex]);
 
-    const renderCentralCircle = (config: any) => (
+    const renderCentralCircle = (config: DeviceConfig) => (
         <div className={config.containerClasses}>
             <div className="w-[60%] relative h-[60%] rounded-full flex items-center justify-center z-0 overflow-hidden">
                 {dotsBg && <Image alt="lama bg dots" src={dotsBg} />}
@@ -60,7 +60,7 @@ const Payment = () => {
         </div>
     );
 
-    const renderRotatingElements = (config: any) => (
+    const renderRotatingElements = (config: DeviceConfig) => (
         <div className={config.rotatingClasses} style={{ transform: `rotate(${rotation}deg)`, transition: "transform 0.77s ease-in-out" }}>
             {items.map((item, index) => {
                 const isActive = index === activeIndex;

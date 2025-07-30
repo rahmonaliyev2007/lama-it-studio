@@ -12,7 +12,7 @@ const Header = () => {
                 <Nav />
                 <div className='max-[900px]:hidden'><Button text={'Связаться с нами'} /></div>
             </div>
-            {/* <Cursor/> */}
+            <Cursor/>
         </div>
     )
 }

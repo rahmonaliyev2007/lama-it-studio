@@ -68,3 +68,22 @@ export const BREAKPOINTS = {
     noMaxHeight: true
   }
 };
+
+export interface DeviceConfig {
+  containerClasses: string;
+  rotatingClasses: string;
+  translateDistance: number;
+  activeTranslateDistance: number;
+  circleSize: string;
+  iconScale: string;
+  activeWidth: string;
+  activeMinWidth: string;
+  titleSize: string;
+  textSize: string;
+  lamaScale: string;
+  shadowScale1: string;
+  shadowScale2: string;
+  borderRadius: string;
+  iconPadding?: string;
+  noMaxHeight?: boolean;
+}

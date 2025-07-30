@@ -1,77 +1,81 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 const Cursor = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [cursorVisible, setCursorVisible] = useState(false);
-    const particlesRef = useRef<HTMLDivElement>(null);
-    const heroRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const particlesRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-            setCursorVisible(true);
-        };
+  const createParticle = useCallback((): void => {
+    if (!particlesRef.current) return;
 
-        const handleMouseLeave = () => {
-            setCursorVisible(false);
-        };
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
 
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('mouseleave', handleMouseLeave);
+    const size = Math.random() * 5 + 2;
+    const posX = Math.random() * window.innerWidth;
+    const posY = Math.random() * window.innerHeight;
+    const duration = Math.random() * 20 + 10;
+    const delay = Math.random() * 5;
 
-        if (particlesRef.current) {
-            for (let i = 0; i < 50; i++) {
-                createParticle();
-            }
-        }
-        if (heroRef.current) {
-            const text = heroRef.current.querySelector('h1');
-            if (text) {
-                text.classList.add('animate-reveal');
-            }
-        }
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${posX}px`;
+    particle.style.top = `${posY}px`;
+    particle.style.opacity = (Math.random() * 0.5 + 0.3).toString();
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${delay}s`;
 
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseleave', handleMouseLeave);
-        };
-    }, []);
-    
-    const createParticle = (): void => {
-        
-        if (!particlesRef.current) return;
+    particlesRef.current.appendChild(particle);
 
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        const size: number = Math.random() * 5 + 2;
-        const posX: number = Math.random() * window.innerWidth;
-        const posY: number = Math.random() * window.innerHeight;
-        const duration: number = Math.random() * 20 + 10;
-        const delay: number = Math.random() * 5;
+    setTimeout(() => {
+      if (particlesRef.current?.contains(particle)) {
+        particlesRef.current.removeChild(particle);
+        createParticle(); 
+      }
+    }, (duration + delay) * 10);
+  }, []);
 
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${posX}px`;
-        particle.style.top = `${posY}px`;
-        particle.style.opacity = (Math.random() * 0.5 + 0.3).toString();
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-
-        particlesRef.current.appendChild(particle);
-
-        setTimeout(() => {
-            if (particlesRef.current && particlesRef.current.contains(particle)) {
-                particlesRef.current.removeChild(particle);
-                createParticle(); 
-            }
-        }, (duration + delay) * 10000);
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setCursorVisible(true);
     };
-    return (
-       <div className={`fixed rounded-full w-[20px] h-[20px] pointer-events-none z-50 -translate-1/2 shadow-[0_0_5.2px_0_#00000040] bg-linear-to-r from-[#FFFFFF] to-[#6BB0FF] ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}
-        style={{ left: `${mousePosition.x + 30}px`, top: `${mousePosition.y + 30}px`}} />
 
-    )
-}
+    const handleMouseLeave = () => {
+      setCursorVisible(false);
+    };
 
-export default Cursor
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
+
+    if (particlesRef.current) {
+      for (let i = 0; i < 50; i++) {
+        createParticle();
+      }
+    }
+
+    if (heroRef.current) {
+      const text = heroRef.current.querySelector('h1');
+      if (text) {
+        text.classList.add('animate-reveal');
+      }
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [createParticle]);
+
+  return (
+    <>
+      <div ref={particlesRef} className="pointer-events-none fixed top-0 left-0 w-full h-full z-[-1]"/>
+      <div ref={heroRef} className={`fixed rounded-full w-[20px] h-[20px] pointer-events-none z-50 -translate-1/2 shadow-[0_0_5.2px_0_#00000040] bg-gradient-to-r from-[#FFFFFF] to-[#6BB0FF] ${ cursorVisible ? 'opacity-100' : 'opacity-0' }`} style={{ left: `${mousePosition.x + 30}px`, top: `${mousePosition.y + 30}px`, }}/>
+    </>
+  );
+};
+
+export default Cursor;

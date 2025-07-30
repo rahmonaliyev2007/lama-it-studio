@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import "./hero.css";
 import Header from "../Header";
 import GradientText from "@/app/components/GradientText/GradientText";
@@ -13,7 +13,7 @@ const Hero = () => {
   const highlightRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  const moveHighlight = () => {
+  const moveHighlight = useCallback(() => {
     const target = activeBtn === "left" ? leftRef.current : rightRef.current;
     const highlight = highlightRef.current;
 
@@ -22,13 +22,13 @@ const Hero = () => {
       highlight.style.left = `${offsetLeft - 4}px`;
       highlight.style.width = `${offsetWidth + 6}px`;
     }
-  };
+  }, [activeBtn]);
 
   useEffect(() => {
     moveHighlight();
     window.addEventListener("resize", moveHighlight);
     return () => window.removeEventListener("resize", moveHighlight);
-  }, [activeBtn]);
+  }, [moveHighlight]);
 
   return (
     <header className="hero-container">
@@ -47,8 +47,10 @@ const Hero = () => {
         </p>
 
         {/* Button group */}
-        <div onMouseLeave={() => setActiveBtn("right")} className="!mt-[40px] cursor-pointer bg-[#0F0F0FE5] flex items-center justify-start rounded-[15px] border border-[#353535] relative overflow-hidden !px-[8px]">
-
+        <div
+          onMouseLeave={() => setActiveBtn("right")}
+          className="!mt-[40px] cursor-pointer bg-[#0F0F0FE5] flex items-center justify-start rounded-[15px] border border-[#353535] relative overflow-hidden !px-[8px]"
+        >
           {/* Moving background border */}
           <div
             ref={highlightRef}
@@ -56,16 +58,40 @@ const Hero = () => {
           />
 
           {/* Left button */}
-          <button ref={leftRef} onMouseEnter={() => setActiveBtn("left")} onClick={() => router.push('#payments')} className={`relative z-10 font-medium !py-[10px] !px-[18px] duration-300 max-[768px]:text-[14px] ${activeBtn === "left" ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#6BB0FF]" : "text-[#777777]"}`}>
+          <button
+            ref={leftRef}
+            onMouseEnter={() => setActiveBtn("left")}
+            onClick={() => router.push("#payments")}
+            className={`relative z-10 font-medium !py-[10px] !px-[18px] duration-300 max-[768px]:text-[14px] ${
+              activeBtn === "left"
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#6BB0FF]"
+                : "text-[#777777]"
+            }`}
+          >
             Наши услуги
           </button>
 
           {/* Right button */}
-          <button ref={rightRef} onMouseEnter={() => setActiveBtn("right")} onClick={() => router.push('#contact')} className="relative z-10 flex items-center gap-1 font-medium !py-[10px] !px-[18px] duration-300 max-[768px]:text-[14px]" >
-            <span className={`duration-500 ${activeBtn === "right" ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#6BB0FF]" : "text-[#777777]"}`} >
+          <button
+            ref={rightRef}
+            onMouseEnter={() => setActiveBtn("right")}
+            onClick={() => router.push("#contact")}
+            className="relative z-10 flex items-center gap-1 font-medium !py-[10px] !px-[18px] duration-300 max-[768px]:text-[14px]"
+          >
+            <span
+              className={`duration-500 ${
+                activeBtn === "right"
+                  ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#6BB0FF]"
+                  : "text-[#777777]"
+              }`}
+            >
               Связаться
             </span>
-            <span className={`duration-500 ${activeBtn === "right" ? "text-[#6BB0FF]" : "text-[#777777]"}`} >
+            <span
+              className={`duration-500 ${
+                activeBtn === "right" ? "text-[#6BB0FF]" : "text-[#777777]"
+              }`}
+            >
               <ArrowIcon />
             </span>
           </button>

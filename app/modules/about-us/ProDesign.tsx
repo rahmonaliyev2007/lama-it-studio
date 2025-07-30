@@ -3,8 +3,7 @@
 import useInViewOnce from '@/app/hooks/inView'
 import { PersonIcon } from '@/public/assets/icons/icons'
 import { LamaIconCircle } from '@/public/assets/icons/LamaIcon'
-import React, { useEffect, useRef } from 'react'
-
+import React, { useRef } from 'react'
 const ProDesign = () => {
     const ref = useRef(null)
     const isInView = useInViewOnce(ref);
