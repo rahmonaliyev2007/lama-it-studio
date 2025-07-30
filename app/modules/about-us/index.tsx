@@ -22,12 +22,12 @@ const TecnologiesModule = () => {
       <Heading title={<>Технологии с <br /> человеческим подходом</>} text='О нас' paragraph='Мы — молодая команда, которая живёт на стыке технологий и эстетики. Мы не просто следим за новейшими трендами — мы их создаём. Наши решения объединяют высокие технологии, безупречный стиль дизайна и взгляд, устремлённый далеко в будущее.'/>
 
       <div className="containers">
-        <div className='flex justify-between items-center gap-[15px] !mt-[85px] max-[768px]:!mt-0 max-[500px]:flex-col'>
+        <div className='flex justify-between items-center gap-[15px] !mt-[85px] max-[768px]:!mt-0 max-[500px]:flex-col max-md:flex-col'>
         <ProDesign />
         <AdaptivTecnologies />
         <Effective />
       </div >
-      <div className='flex justify-between items-center gap-[15px] !mt-[15px]'>
+      <div className='flex justify-between items-center gap-[15px] !mt-[15px] max-md:flex-col'>
 
         <Sovershertvo />
         <UnicalDesign />
