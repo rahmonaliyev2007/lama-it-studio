@@ -38,9 +38,11 @@ export default function Slider() {
             </div>
 
             {/* Icon overlay */}
-            <div className="absolute scale-[0.8] top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="absolute scale-[0.8] top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 lama-icon">
                 <LamaIconCircle />
             </div>
+            <div className="w-[100px] h-[100px] bg-[#52515175] rounded-full lama-shadow absolute top-1/2 -translate-1/2 scale-[1.9]"/>
+            <div className="w-[100px] h-[100px] bg-[#7e7b7b2e] rounded-full lama-shadow absolute top-1/2 -translate-1/2 scale-[2.7]"/>
 
             {/* Swiper */}
             <Swiper
