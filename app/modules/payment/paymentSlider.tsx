@@ -52,7 +52,7 @@ export default function Slider() {
                     delay: 6000,
                     disableOnInteraction: false,
                 }}
-                className="absolute top-[40%] left-0 w-full -translate-y-[15%] h-full z-10 !pr-4 !pl-[100px] !m-0 !py-10 "
+                className="absolute top-[38%] left-0 w-full -translate-y-[15%] h-full z-10 !pr-4 !pl-[100px] !m-0 !py-10 "
             >
                 {cards.map((card) => (
                     <SwiperSlide key={card.id}>

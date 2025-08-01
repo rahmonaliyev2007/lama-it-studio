@@ -17,7 +17,7 @@ const UnicalDesign = () => {
     <div ref={ref} className='w-full relative aspect-square max-h-[400px] border-[#4E4C4C] border-[1px] rounded-[30px] p-[20px] shadow-[0 0 5.6px 0 #FFFFFF 15%] overflow-hidden group  '>
           <div className='absolute min-[768px]:bottom-0 max-[768px]:top-0 !p-10 z-[11] max-[850px]:!p-7'>
             <h3 className='font-semibold text-2xl text-white max-[900px]:text-xl'>{t('info_10')}</h3>
-            <p className='font-semibold text-[15px] text-[#969696] !mt-[14px] !pr-[70px] max-[1100px]:!pr-0'>{t('info_11')}</p>
+            <p className='font-semibold text-[15px] text-[#969696] !mt-[14px] !pr-[70px] max-[1100px]:!pr-[0px] max-[850px]:!mt-[5px] max-[850px]:text-[13px]'>{t('info_11')}</p>
           </div>
           <div>
             <div className='flex gap-[6px] min-w-[115%] absolute top-[-25px] -translate-[5px] max-[430px]:top-[-75px]'><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/><BoxBackgroud/></div>
