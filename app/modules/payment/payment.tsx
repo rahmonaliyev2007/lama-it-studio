@@ -5,7 +5,7 @@ import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
 import dotsBg from '@/public/assets/images/dots.svg'
 import Image from "next/image";
 import { BREAKPOINTS, DeviceConfig } from "./paymentConfigs";
-import { AIIcon, BluePlusIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon, } from "@/public/assets/icons/icons";
+import { AIIcon, BluePlusIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon } from "@/public/assets/icons/icons";
 import { useTranslations } from "next-intl";
 
 
@@ -108,7 +108,7 @@ const Payment = () => {
 
     return (
         <section className="" id="payments">
-            <div className="w-full h-screen flex items-center justify-start bg-black text-white relative overflow-hidden">
+            <div className="w-full h-screen max-[768px]:hidden flex items-center justify-start bg-black text-white relative overflow-hidden">
     
                 {renderCentralCircle(BREAKPOINTS.desktop)}
                 {renderCentralCircle(BREAKPOINTS.tablet)}
@@ -116,6 +116,7 @@ const Payment = () => {
 
                 {renderRotatingElements(BREAKPOINTS.desktop)}
                 {renderRotatingElements(BREAKPOINTS.tablet)}
+                {renderRotatingElements(BREAKPOINTS.mobile)}
             </div>
         </section>
     );

@@ -33,8 +33,8 @@ export const BREAKPOINTS = {
     iconPadding: "!p-5"
   },
   mobile: {
-    containerClasses: "min-[900px]:hidden max-[700px]:translate-x-[-6%] max-[650px]:translate-x-[-50%] absolute w-[400px] h-[400px] items-center justify-center translate-x-[7%] flex z-[10]",
-    rotatingClasses: "min-[900px]:hidden max-[460px]:hidden max-[700px]:translate-x-[0%] max-[650px]:translate-x-[-50%] duration-1000 absolute min-w-[350px] h-[350px] border border-dashed border-[#898989] rounded-[50%] flex items-center justify-center translate-x-[15%]",
+    containerClasses: "min-[900px]:hidden max-[768px]:hidden max-[650px]:translate-x-[-50%] absolute w-[400px] h-[400px] items-center justify-center translate-x-[7%] flex z-[10]",
+    rotatingClasses: "min-[900px]:hidden max-[460px]:hidden max-[768px]:hidden max-[650px]:translate-x-[-50%] duration-1000 absolute min-w-[350px] h-[350px] border border-dashed border-[#898989] rounded-[50%] flex items-center justify-center translate-x-[15%]",
     translateDistance: -175,
     activeTranslateDistance: -295,
     circleSize: "w-[60px] h-[60px]",

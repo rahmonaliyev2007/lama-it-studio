@@ -1,90 +1,68 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { useSwipeable } from "react-swipeable";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import Image from "next/image";
+import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
+import dotsBg from '@/public/assets/images/dots.svg';
+import { AIIcon, BluePlusIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon } from "@/public/assets/icons/icons";
+import { useTranslations } from "next-intl";
 
 const cards = [
-  { id: 1, title: "Card 1", desc: "Tavsif 1" },
-  { id: 2, title: "Card 2", desc: "Tavsif 2" },
-  { id: 3, title: "Card 3", desc: "Tavsif 3" },
-  { id: 4, title: "Card 4", desc: "Tavsif 4" },
+    { id: 1, title: "Card 1", desc: "Tavsif 1" },
+    { id: 2, title: "Card 2", desc: "Tavsif 2" },
+    { id: 3, title: "Card 3", desc: "Tavsif 3" },
+    { id: 4, title: "Card 4", desc: "Tavsif 4" },
 ];
 
+
 export default function Slider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const t = useTranslations();
+     const cards = [
+      {id:1 , title: 'Веб-разработка', icon: <GlobeIcon />, description: t('info_17')},
+      {id:2 , title: 'Разработка мобильных приложений', icon: <PhoneIcon />, description: t('info_19') },
+      {id:3 , title: 'AI и машинное обучение', icon: <AIIcon />, description: t('info_16')},
+      {id:4 , title: 'Pc nmadur icon', icon: <PCIcon />, description:t('info_15') },
+      {id:5 , title: 'Branch nimadur title', icon: <BranchIcon />, description: t('info_18'), },
+      {id:6 , title: 'Chip namdur title', icon: <ChipIcon />, description: t('info_14'), },
+      {id:7 , title: 'UI/UX-дизайн', icon: <UIUXIcon />, description: t('info_13'), },
+    ];
+    return (
+        <div className="w-full max-w-3xl mx-auto relative h-[380px]">
+            {/* Background dots */}
+            <div className="absolute w-[380px] h-[380px] rounded-full overflow-hidden bg-black -translate-x-1/2 z-0">
+                <Image src={dotsBg} alt="dots lama-it-studio" fill className="object-cover" />
+                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_80px_40px_rgba(0,0,0,0.9)] pointer-events-none" />
+            </div>
 
-  const clearAndSetTimeout = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
-      nextSlide();
-    }, 4000);
-  };
+            {/* Icon overlay */}
+            <div className="absolute scale-[0.8] top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <LamaIconCircle />
+            </div>
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % cards.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
-  };
-
-  useEffect(() => {
-    clearAndSetTimeout();
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [currentIndex]);
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => nextSlide(),
-    onSwipedRight: () => prevSlide(),
-    trackMouse: true, // kompyuterda ham surish imkoniyati uchun
-  });
-
-  return (
-    <div className="relative w-full max-w-3xl mx-auto overflow-hidden" {...swipeHandlers}>
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className="w-full min-w-full flex-shrink-0 p-6 bg-white rounded-2xl shadow-md text-center"
-          >
-            <h2 className="text-xl font-bold">{card.title}</h2>
-            <p className="text-gray-600 mt-2">{card.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Navigatsiya tugmalari */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-      >
-        ‹
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-      >
-        ›
-      </button>
-
-      {/* Nuqtalar */}
-      <div className="flex justify-center mt-4 gap-2">
-        {cards.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === idx ? "bg-black" : "bg-gray-300"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
+            {/* Swiper */}
+            <Swiper
+                modules={[Autoplay]}
+                spaceBetween={100}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false,
+                }}
+                className="absolute top-[40%] left-0 w-full -translate-y-[15%] h-full z-10 !pr-4 !pl-[100px] !m-0 !py-10 "
+            >
+                {cards.map((card) => (
+                    <SwiperSlide key={card.id}>
+                        <div className="bg-white shadow-[0_0_12px_2px_white] rounded-[20px] !p-[10px]">
+                            <h2 className="text-[14px] text-[#000000] leading-[100%] flex items-center gap-2 font-bold"><span className={`${card.id === 7 ? 'scale-[1.1] !py-2 !mx-2' : 'scale-[0.7]'}`}>{card.icon}</span> {card.title}</h2>
+                            <p className="text-[#000000] font-bold leading-[110%] text-[10px] !ml-[48px]">{card.description}</p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
 }
