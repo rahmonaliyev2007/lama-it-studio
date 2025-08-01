@@ -10,14 +10,6 @@ import dotsBg from '@/public/assets/images/dots.svg';
 import { AIIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon } from "@/public/assets/icons/icons";
 import { useTranslations } from "next-intl";
 
-const cards = [
-    { id: 1, title: "Card 1", desc: "Tavsif 1" },
-    { id: 2, title: "Card 2", desc: "Tavsif 2" },
-    { id: 3, title: "Card 3", desc: "Tavsif 3" },
-    { id: 4, title: "Card 4", desc: "Tavsif 4" },
-];
-
-
 export default function Slider() {
     const t = useTranslations();
      const cards = [
