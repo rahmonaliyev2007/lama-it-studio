@@ -8,13 +8,14 @@ import Cursor from '../Cursor';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { getCookie } from 'cookies-next';
+import MobileNav from '@/app/components/Nav/mobileNav';
 
 const Header = () => {
   const t = useTranslations();
   const router = useRouter();
   const pathname = usePathname();
 
-  const [lang, setLang] = useState<'uz' | 'ru' | ''>(''); // Boshlanishida bo‘sh
+  const [lang, setLang] = useState<'uz' | 'ru' | ''>('');
 
   useEffect(() => {
     const cookieLang = getCookie('NEXT_LOCALE');
@@ -36,21 +37,22 @@ const Header = () => {
       <div className='containers flex justify-between items-center gap-4'>
         <Logo />
         <Nav />
+        <div className='flex items-center gap-2'>
 
-        {/* Language Select */}
-        <select
-          value={lang}
-          onChange={handleChange}
-          className=" rounded-lg border border-gray-300 text-sm bg-white text-black focus:outline-none shadow-sm hover:border-black transition"
-        >
-          <option value="uz">uz</option>
-          <option value="ru">ru</option>
-        </select>
+          <select value={lang} onChange={handleChange} className=" rounded-[10px] border-[#2B2B2B] border text-sm h-[45px] max-[1050px]:h-[35px] text-white w-[50px] bg-[rgb(14,14,14)] !px-1  shadow-sm focus:outline-none transition">
+            <option value="uz">uz</option>
+            <option value="ru">ru</option>
+          </select>
+          <div className='flex items-center gap-2'>
+            <MobileNav />
 
-        {/* Button */}
-        <div className='max-[900px]:hidden'>
-          <Button text={t('menu_6')} />
+            <div className='max-[1050px]:hidden backdrop-blur-2xl bg-transparent '>
+              <Button text={t('menu_6')} />
+            </div>
+          </div>
         </div>
+
+
       </div>
       <Cursor />
     </div>
