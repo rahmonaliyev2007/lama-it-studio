@@ -7,7 +7,7 @@ import "swiper/css";
 import Image from "next/image";
 import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
 import dotsBg from '@/public/assets/images/dots.svg';
-import { AIIcon, BluePlusIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon } from "@/public/assets/icons/icons";
+import { AIIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon } from "@/public/assets/icons/icons";
 import { useTranslations } from "next-intl";
 
 const cards = [
