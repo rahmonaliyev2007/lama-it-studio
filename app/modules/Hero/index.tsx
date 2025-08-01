@@ -5,6 +5,7 @@ import Header from "../Header";
 import GradientText from "@/app/components/GradientText/GradientText";
 import { ArrowIcon } from "@/public/assets/icons/icons";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
   const [activeBtn, setActiveBtn] = useState<"left" | "right">("right");
@@ -12,6 +13,7 @@ const Hero = () => {
   const rightRef = useRef<HTMLButtonElement>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const t = useTranslations();
 
   const moveHighlight = useCallback(() => {
     const target = activeBtn === "left" ? leftRef.current : rightRef.current;
@@ -43,7 +45,7 @@ const Hero = () => {
           <GradientText text="Lama IT Studio" />
         </h1>
         <p className="font-medium !px-[20px] text-[20px] max-[1100px]:text-lg max-[1000px]:text-base duration-1000 max-[768px]:text-sm max-[768px]:tracking-[-5%] max-[768px]:!mt-[20px]">
-          Мы разрабатываем индивидуальные ИТ-решения для инновационных компаний.
+         {t('header_1')}
         </p>
 
         {/* Button group */}
@@ -68,7 +70,7 @@ const Hero = () => {
                 : "text-[#777777]"
             }`}
           >
-            Наши услуги
+            {t('button_1')}
           </button>
 
           {/* Right button */}
@@ -85,7 +87,7 @@ const Hero = () => {
                   : "text-[#777777]"
               }`}
             >
-              Связаться
+              {t('button_2')}
             </span>
             <span
               className={`duration-500 ${

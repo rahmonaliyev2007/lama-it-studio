@@ -9,10 +9,19 @@ const Heading = ({ title, text, paragraph}: { title: ReactNode, text: string, pa
                     <span>{text}</span>
                 </div>
             </div>
-            <h2 className={`text-[64px] max-[1100px]:text-[50px] max-[768px]:!my-[25px] max-[768px]:text-[40px] max-[768px]:text-start max-[600px]:text-[32px] font-semibold bg-gradient-to-b leading-[85%] max-[768px]:leading-[75%] duration-1000 from-neutral-400 text-center !my-[40px] !m-auto via-neutral-500 to-blue-400 bg-clip-text text-transparent`}>
-                {title}
-            </h2>
-            <p className='max-w-[900px] max-[768px]:text-start max-[768px]:text-[14px] max-[768px]:leading-[110%] text-[#CEC9C9] font-medium text-[16px] !m-auto text-center'>
+            <h2
+  className={`
+    text-[64px] max-[1100px]:text-[50px] max-[768px]:!my-[25px] 
+    max-[768px]:text-[40px] max-[768px]:text-start max-[600px]:text-[32px] 
+    font-semibold leading-[85%] max-[768px]:leading-[85%] 
+    duration-1000 text-center !my-[40px] !m-auto
+    bg-[linear-gradient(-182deg,_white,_#737373,_#60a5fa)]
+    bg-clip-text text-transparent
+  `}
+>
+  {title}
+</h2>
+            <p className='max-w-[900px] max-[768px]:text-start leading-[110%] max-[768px]:text-[14px] max-[768px]:leading-[110%] text-[#CEC9C9] font-medium text-[16px] !m-auto text-center'>
                 {paragraph}
             </p>
         </div>

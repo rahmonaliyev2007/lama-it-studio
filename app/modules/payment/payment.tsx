@@ -2,19 +2,30 @@
 import React, { useEffect, useState } from "react";
 import './rotation.css'
 import { LamaIconCircle } from "@/public/assets/icons/LamaIcon";
-import { items } from "./paymentData";
 import dotsBg from '@/public/assets/images/dots.svg'
 import Image from "next/image";
 import { BREAKPOINTS, DeviceConfig } from "./paymentConfigs";
+import { AIIcon, BluePlusIcon, BranchIcon, ChipIcon, GlobeIcon, PCIcon, PhoneIcon, UIUXIcon, } from "@/public/assets/icons/icons";
+import { useTranslations } from "next-intl";
 
-// Breakpoint configurations
 
 
 const Payment = () => {
     const [activeIndex, setActiveIndex] = useState(2);
     const [rotation, setRotation] = useState(0);
     const [showDescriptionIndex, setShowDescriptionIndex] = useState<number | null>(2);
+    const t = useTranslations();
 
+ const items = [
+  { title: 'Веб-разработка', icon: <GlobeIcon />, description: t('info_17')},
+  { title: 'Разработка мобильных приложений', icon: <PhoneIcon />, description: t('info_19') },
+  { title: 'AI и машинное обучение', icon: <AIIcon />, description: t('info_16')},
+  { title: 'Pc nmadur icon', icon: <PCIcon />, description:t('info_15') },
+  { title: 'plus', icon: <BluePlusIcon />, description: "" },
+  { title: 'Branch nimadur title', icon: <BranchIcon />, description: t('info_18'), },
+  { title: 'Chip namdur title', icon: <ChipIcon />, description: t('info_14'), },
+  { title: 'UI/UX-дизайн', icon: <UIUXIcon />, description: t('info_13'), },
+];
     useEffect(() => {
         let lastSwitchTime = performance.now();
         let animationFrameId: number;
@@ -87,7 +98,7 @@ const Payment = () => {
 
                         <div className={`${isActive && shouldShowDescription ? "opacity-100 visible" : "opacity-0 invisible"} ${config.noMaxHeight ? "" : "max-h-96"} ${config.activeMinWidth} duration-500`}>
                             <h4 className={`font-bold ${config.titleSize} text-black line-clamp-1`}>{item.title}</h4>
-                            <p className={`${config.textSize} leading-[90%] text-black !pr-2 line-clamp-3 font-bold transition-all duration-1000 ease-in-out transform w-full`}>{item.description}</p>
+                            <p className={`${config.textSize} leading-[90%] text-black !pr-2 line-clamp-6 font-bold transition-all duration-1000 ease-in-out transform w-full`}>{item.description}</p>
                         </div>
                     </div>
                 );
@@ -105,8 +116,6 @@ const Payment = () => {
 
                 {renderRotatingElements(BREAKPOINTS.desktop)}
                 {renderRotatingElements(BREAKPOINTS.tablet)}
-                {renderRotatingElements(BREAKPOINTS.mobile)}
-                {renderRotatingElements(BREAKPOINTS.small)}
             </div>
         </section>
     );

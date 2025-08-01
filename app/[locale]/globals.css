@@ -27,36 +27,36 @@ body {
 
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve-Bold.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve-Bold.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve-Medium.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve-Medium.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve-Oblique.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve-Oblique.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve-Regular.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Involve";
-  src: url("../public/assets/fonts/Involve/Involve-SemiBold.ttf") format("ttf");
+  src: url("../../public/assets/fonts/Involve/Involve-SemiBold.ttf") format("ttf");
   font-style: normal;
 }

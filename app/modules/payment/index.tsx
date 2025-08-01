@@ -1,14 +1,24 @@
+"use client"
 import React from 'react'
 import Payment from './payment'
 import Heading from '@/app/components/Heading/Heading'
+import { useTranslations } from 'next-intl'
+import Slider from './paymentSlider'
 
 const PaymentModule = () => {
+  const t = useTranslations();
   return (
     <>
     <div className='containers'>
-      <Heading text="Услуги" title={<>Что мы умеем — <br /> технологично, точно, красиво</>} paragraph="От сайта до сложной цифровой экосистемы — мы разрабатываем продукты, которые решают реальные задачи. В каждом проекте — баланс технологий, дизайна и здравого смысла. Мы не просто делаем «как надо», мы делаем как лучше." />
+      <Heading text={t('menu_2')} title={<>{t('header_4').split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}</>} paragraph={t('info_12')} />
     </div>
      <Payment/>
+     <Slider/>
     </>
   )
 }

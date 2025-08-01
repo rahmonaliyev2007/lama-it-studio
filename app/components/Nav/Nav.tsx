@@ -1,20 +1,22 @@
 "use client";
 import React, { useRef, useState } from "react";
 import "./nav.css";
-
-const navItems = [
-  { title: "О нас", link: "#about" },
-  { title: "Услуги", link: "#payments" },
-  { title: "Проекты", link: "#projects" },
-  { title: "Вопросы", link: "#questions" },
-  { title: "Контакты", link: "#contact" },
-];
+import { useTranslations } from "next-intl";
 
 const Nav = () => {
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseThere, setIsMouseThere] = useState<boolean>(false);
-  const [isActive, setIsActive] = useState<boolean>(false)
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const t = useTranslations();
+
+  const navItems = [
+  { title: t('menu_1'), link: "#about" },
+  { title: t('menu_2'), link: "#payments" },
+  { title: t('menu_3'), link: "#projects" },
+  { title: t('menu_4'), link: "#questions" },
+  { title: t('menu_5'), link: "#contact" },
+];
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
     const li = e.currentTarget;
