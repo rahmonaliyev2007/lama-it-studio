@@ -12,15 +12,14 @@ import React, { useState } from 'react'
 const socialLinks = [
   { icon: <TelegramIcon />, url: 'https://t.me/lamaitofficial' },
   { icon: <InstagramIcon />, url: 'https://www.instagram.com/lamastudio.uz?igsh=bDJ1enFmYTJia3pk' },
-  { icon: <FaceBookIcon />, url: '' },
+  { icon: <FaceBookIcon />, url: 'https://m.facebook.com/61578949140224/' },
   { icon: <LinkedInIcon />, url: 'https://www.linkedin.com/in/%D0%B0%D0%BC%D0%B8%D1%80%D1%85%D0%B0%D0%BD-%D0%B0%D0%BB%D0%B8%D0%B1%D0%B5%D0%BA%D0%BE%D0%B2-a52237378/' },
 ]
-
-
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', phone: '', message: '' })
   const t = useTranslations();
+  const [isModal, setIsModal] = useState<boolean>(false)
 
   const formFields = [
     { name: 'name', label: t('input_info_name_1'), type: 'text', placeholder: t('input_info_name_2') },
@@ -30,8 +29,8 @@ const Contact = () => {
 
   const contactInfo = [
     { label: t('info_31'), content: t('info_27'), type: 'text' },
-    { label: t('info_28'), content: 'info@lama.ru', type: 'email' },
-    { label: t('info_29'), content: '+998933851755', type: 'phone' },
+    { label: t('info_28'), content: 'lamaitstudiouz@gmail.com', type: 'email' },
+    { label: t('info_29'), content: '+998990870065', type: 'phone' },
   ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,6 +41,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     sendMessageToBot(form)
+    setIsModal(true)
     setForm({ name: '', phone: '', message: '' })
   }
 
@@ -118,6 +118,41 @@ const Contact = () => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+      <div
+        onClick={() => setIsModal(false)}
+        className={`fixed inset-0 flex justify-center items-center z-[100]  ${isModal ? 'visible bg-black/40 backdrop-blur-[1px]' : 'invisible'} transition-all duration-700`}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="modal-box max-w-[500px] w-full bg-black/90 backdrop-blur-md rounded-[30px] !p-8 shadow-2xl border border-[#707070] duration-500"
+        >
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className='bounce w-[100px] h-[100px] rounded-full flex justify-center items-center'>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-[#6BB0FF] w-20 h-20 "
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            <h4 className='text-2xl capitalize'><GradientText text={t('send_message_title')} /></h4>
+            <p className="text-[#969696]">
+              {t('send_message_desc')}
+            </p>
+
+            <button
+              onClick={() => setIsModal(false)}
+              className="!mt-4 !px-6 gradient-button !py-2 bg-green-600 hover:bg-green-700 text-white rounded-full transition duration-500"
+            >
+              {t('send_close')}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

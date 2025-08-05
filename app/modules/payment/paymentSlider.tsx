@@ -22,7 +22,7 @@ export default function Slider() {
       {id:7 , title: 'UI/UX-дизайн', icon: <UIUXIcon />, description: t('info_13'), },
     ];
     return (
-        <div className="w-full max-w-3xl mx-auto relative h-[380px]">
+        <div className="w-full max-w-3xl mx-auto relative h-[380px] min-[768px]:hidden">
             {/* Background dots */}
             <div className="absolute w-[380px] h-[380px] rounded-full overflow-hidden bg-black -translate-x-1/2 z-0">
                 <Image src={dotsBg} alt="dots lama-it-studio" fill className="object-cover" />
@@ -37,11 +37,7 @@ export default function Slider() {
             <div className="w-[100px] h-[100px] bg-[#7e7b7b2e] rounded-full lama-shadow absolute top-1/2 -translate-1/2 scale-[2.7]"/>
 
             {/* Swiper */}
-            <Swiper
-                modules={[Autoplay]}
-                spaceBetween={100}
-                slidesPerView={1}
-                loop={true}
+            <Swiper modules={[Autoplay]} spaceBetween={100} slidesPerView={1} loop={true}
                 autoplay={{
                     delay: 6000,
                     disableOnInteraction: false,

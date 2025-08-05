@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
+import Logo from '../Logo/Logo';
 
 const MobileNav = () => {
   const [isActive, setIsActive] = useState(false);
@@ -17,7 +18,6 @@ const MobileNav = () => {
     { title: t('menu_5'), link: "#contact" },
   ];
 
-  // 👇 Disable scroll when menu is open
   useEffect(() => {
     if (isActive) {
       document.body.style.overflow = 'hidden';
@@ -46,16 +46,10 @@ const MobileNav = () => {
       </button>
 
       {/* Overlay Nav */}
-      <div className={`fixed ${
-        isActive ? "top-0 opacity-100" : "top-[-100%] opacity-0"
-      } duration-1000 w-full left-0 flex justify-center flex-col !px-4 gap-[25px] !pt-[120px] backdrop-blur-2xl !pb-10 z-[40] transition-all`}>
+      <div className={`fixed ${ isActive ? "top-0 opacity-100" : "top-[-100%] opacity-0" } duration-1000 w-full left-0 flex justify-center flex-col !px-4 gap-[25px] !pt-[55px] backdrop-blur-2xl !pb-10 z-[40] transition-all`}>
+        <Logo/>
         {navItems.map((item) => (
-          <Link
-            key={item.link}
-            className='text-2xl font-bold leading-[100%] tracking-tighter'
-            href={item.link}
-            onClick={() => setIsActive(false)}
-          >
+          <Link key={item.link} className='text-2xl font-bold leading-[100%] tracking-tighter' href={item.link} onClick={() => setIsActive(false)}>
             {item.title}
           </Link>
         ))}

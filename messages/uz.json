@@ -61,5 +61,8 @@
     "input_info_contact": "Kontakt",
     "input_info_title_1": "Xabar",
     "input_info_title_2": "Xabarni kiriting",
-    "button_3": "Yuborish"
+    "button_3": "Yuborish",
+    "send_message_desc":"Qiziqishingiz uchun rahmat. 24 soat ichida siz bilan bog‘lanamiz.",
+    "send_message_title":"Xabar yuborildi",
+    "send_close":"Yopish"
 }

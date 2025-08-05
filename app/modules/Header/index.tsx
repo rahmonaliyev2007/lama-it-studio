@@ -22,7 +22,7 @@ const Header = () => {
     if (cookieLang === 'uz' || cookieLang === 'ru') {
       setLang(cookieLang);
     } else {
-      setLang('ru'); // fallback
+      setLang('ru'); 
     }
   }, []);
 
