@@ -13,13 +13,13 @@ import { useTranslations } from "next-intl";
 export default function Slider() {
     const t = useTranslations();
      const cards = [
-      {id:1 , title: 'Веб-разработка', icon: <GlobeIcon />, description: t('info_17')},
-      {id:2 , title: 'Разработка мобильных приложений', icon: <PhoneIcon />, description: t('info_19') },
-      {id:3 , title: 'AI и машинное обучение', icon: <AIIcon />, description: t('info_16')},
-      {id:4 , title: 'Pc nmadur icon', icon: <PCIcon />, description:t('info_15') },
-      {id:5 , title: 'Branch nimadur title', icon: <BranchIcon />, description: t('info_18'), },
-      {id:6 , title: 'Chip namdur title', icon: <ChipIcon />, description: t('info_14'), },
-      {id:7 , title: 'UI/UX-дизайн', icon: <UIUXIcon />, description: t('info_13'), },
+      {id:1 , title: t('title_1'), icon: <GlobeIcon />, description: t('info_17')},
+      {id:2 , title: t('title_2'), icon: <PhoneIcon />, description: t('info_19') },
+      {id:3 , title: t('title_3'), icon: <AIIcon />, description: t('info_16')},
+      {id:4 , title: t('title_4'), icon: <PCIcon />, description:t('info_15') },
+      {id:5 , title: t('title_5'), icon: <BranchIcon />, description: t('info_18'), },
+      {id:6 , title: t('title_6'), icon: <ChipIcon />, description: t('info_14'), },
+      {id:7 , title: t('title_7'), icon: <UIUXIcon />, description: t('info_13'), },
     ];
     return (
         <div className="w-full max-w-3xl mx-auto relative h-[380px] min-[768px]:hidden">

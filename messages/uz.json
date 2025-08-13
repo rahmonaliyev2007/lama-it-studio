@@ -64,5 +64,12 @@
     "button_3": "Yuborish",
     "send_message_desc":"Qiziqishingiz uchun rahmat. 24 soat ichida siz bilan bog‘lanamiz.",
     "send_message_title":"Xabar yuborildi",
-    "send_close":"Yopish"
+    "send_close":"Yopish",
+    "title_1":"Web dasturlash",
+    "title_2":"Mobil dasturlash",
+    "title_3":"AI va ML",
+    "title_4":"Desktop dasturlash",
+    "title_5":"Digital xizmat",
+    "title_6":"Raqamlashtirish",
+    "title_7":"UX/UI-dizayn"
 }

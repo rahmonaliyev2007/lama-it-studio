@@ -3,7 +3,7 @@ import "./button.css"
 import GradientText from '../GradientText/GradientText'
 const Button = ({text}: {text:string}) => {
   return (
-    <button className={`gradient-button`}><GradientText text={text}/></button>
+    <button className={`gradient-button !z-[70]`}><GradientText text={text}/></button>
   )
 }
 

@@ -14,10 +14,10 @@ const Projects = () => {
   const t = useTranslations();
 
   const projectsData = [
-    { image: b2b, alt: 'aqua site lama-it-studio', bg: 'linear-gradient(150deg, #3d3d3d, #6bb0ff58)', title: 'B2bshop', link: "", desc: t('info_21') },
-    { image: aqua, alt: 'b2b site lama-it-studio', bg: 'linear-gradient(120deg, #6BB0FF80, #FFFFFF78)', title: 'Aqua Evolution', link: "", desc: t('info_22') },
-    { image: star, alt: 'star site lama-it-studio', bg: 'linear-gradient(120deg, black, #153239, #2f1b22, black)', title: 'Imart Business', link: "", desc: t('info_23') },
-    { image: statone, alt: 'statone site lama-it-studio', bg: 'linear-gradient(120deg, #247045, #ceb578)', title: 'STAT-URMON', link: "", desc: t('info_24') },
+    { image: b2b, alt: 'aqua site lama-it-studio', bg: 'linear-gradient(150deg, #6a6a6a, #a3d4ffcc)', title: 'B2bshop', link: "", desc: t('info_21') },
+    { image: aqua, alt: 'b2b site lama-it-studio', bg: 'linear-gradient(120deg, #a3d4ffcc, #ffffffcc)', title: 'Aqua Evolution', link: "", desc: t('info_22') },
+    { image: star, alt: 'star site lama-it-studio', bg: 'linear-gradient(120deg, #2e2e2e, #2a708f, #6b384c, #2e2e2e)', title: 'Imart Business', link: "", desc: t('info_23') },
+    { image: statone, alt: 'statone site lama-it-studio', bg: 'linear-gradient(120deg, #40c57d, #f1ddaa)', title: 'STAT-URMON', link: "", desc: t('info_24') },
   ]
   return (
     <main className='containers' id='projects'>

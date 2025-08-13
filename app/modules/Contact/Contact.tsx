@@ -1,7 +1,6 @@
 'use client'
 
 import GradientText from '@/app/components/GradientText/GradientText'
-import Heading from '@/app/components/Heading/Heading'
 import { sendMessageToBot } from '@/app/services/sendMessageToBot'
 import { InstagramIcon, TelegramIcon, FaceBookIcon, LinkedInIcon } from '@/public/assets/icons/SocialLinks'
 import { useTranslations } from 'next-intl'
@@ -17,7 +16,7 @@ const socialLinks = [
 ]
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: '', phone: '', message: '' })
+  const [form, setForm] = useState({ name: '', phone: '+998', message: '' })
   const t = useTranslations();
   const [isModal, setIsModal] = useState<boolean>(false)
 
@@ -34,15 +33,28 @@ const Contact = () => {
   ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setForm(prev => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const filteredValue = value.replace(/[^\d+]/g, "");
+
+      const formatted = filteredValue.startsWith("+")
+        ? "+" + filteredValue.slice(1).replace(/[+]/g, "")
+        : filteredValue.replace(/[+]/g, "");
+
+      setForm((prev) => ({ ...prev, [name]: formatted }));
+      return;
+    }
+
+    // Boshqa inputlar uchun default
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     sendMessageToBot(form)
     setIsModal(true)
-    setForm({ name: '', phone: '', message: '' })
+    setForm({ name: '', phone: '+998', message: '' })
   }
 
   return (
@@ -81,7 +93,7 @@ const Contact = () => {
               <h4 className='text-2xl'><GradientText text={label} /></h4>
               <div className='mt-[18px] text-xl font-medium'>
                 {type === 'text' && <p className='max-w-[284px] max-[768px]:!m-auto'>{content}</p>}
-                {type === 'email' && <Link className='text-[36px]' href={`mailto:${content}`}>{content}</Link>}
+                {type === 'email' && <Link className='text-[36px] max-[1050px]:text-2xl max-[400px]:text-lg' href={`mailto:${content}`}>{content}</Link>}
                 {type === 'phone' && <Link className='text-[36px] font-semibold' href={`tel:${content}`}>{content}</Link>}
               </div>
             </div>
@@ -107,6 +119,17 @@ const Contact = () => {
                 <span className='text-xl font-medium hidden md:block'>{label}</span>
                 {type === 'textarea' ? (
                   <textarea name={name} value={form[name as keyof typeof form]} onChange={handleChange} rows={5} placeholder={placeholder} required className='rounded-[15px] border border-[#4E4C4C] !p-3 outline-none resize-none max-md:text-sm' />
+                ) : type === 'tel' ? (
+                  <input
+                    type="text"
+                    name={name}
+                    maxLength={13}
+                    value={form[name as keyof typeof form]}
+                    onChange={handleChange}
+                    placeholder={placeholder}
+                    required
+                    className="!p-3 rounded-[15px] border border-[#4E4C4C] outline-none max-md:text-sm"
+                  />
                 ) : (
                   <input type={type} name={name} value={form[name as keyof typeof form]} onChange={handleChange} placeholder={placeholder} required className='!p-3 rounded-[15px] border border-[#4E4C4C] outline-none max-md:text-sm' />
                 )}
@@ -122,11 +145,11 @@ const Contact = () => {
       </div>
       <div
         onClick={() => setIsModal(false)}
-        className={`fixed inset-0 flex justify-center items-center z-[100]  ${isModal ? 'visible bg-black/40 backdrop-blur-[1px]' : 'invisible'} transition-all duration-700`}
+        className={`fixed inset-0 flex justify-center items-center z-[100]  ${isModal ? 'visible bg-black/40 backdrop-blur-[1px] opacity-100' : 'invisible opacity-0'} transition-all duration-700`}
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className="modal-box max-w-[500px] w-full bg-black/90 backdrop-blur-md rounded-[30px] !p-8 shadow-2xl border border-[#707070] duration-500"
+          className={`modal-box max-w-[500px] w-full ${isModal ? 'visible bg-black/90 backdrop-blur-[1px]' : 'invisible'} rounded-[30px] !p-8 shadow-2xl border border-[#707070] duration-500`}
         >
           <div className="flex flex-col items-center text-center space-y-4">
             <div className='bounce w-[100px] h-[100px] rounded-full flex justify-center items-center'>
@@ -148,13 +171,14 @@ const Contact = () => {
 
             <button
               onClick={() => setIsModal(false)}
-              className="!mt-4 !px-6 gradient-button !py-2 bg-green-600 hover:bg-green-700 text-white rounded-full transition duration-500"
+              className="!mt-4 !px-6 gradient-button !py-2 text-white rounded-full transition duration-500"
             >
               {t('send_close')}
             </button>
           </div>
         </div>
       </div>
+      <p className='text-center !mt-10'>Written by <Link href={'https://rahmonaliyev2007.vercel.app'} className='text-blue-400 hover:underline'>raxmonaliyev.dev</Link></p>
     </footer>
   )
 }
